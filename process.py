@@ -1,6 +1,12 @@
 import pyshark
+import argparse
 
-cap = pyshark.FileCapture('MS-Capture-1.pcap')
+parser = argparse.ArgumentParser(description='Outputs stats')
+parser.add_argument("pcap", metavar="PCAP", type=str, help="filepath for pcap")
+
+args = parser.parse_args()
+
+cap = pyshark.FileCapture(args.pcap)
 
 # s = set()
 d = dict()
