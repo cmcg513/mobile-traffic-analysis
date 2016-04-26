@@ -15,7 +15,7 @@ i = 0
 for p in cap:
 	i += 1
 	if p.highest_layer not in d:
-		d[p.highest_layer] = 0
+		d[p.highest_layer] = 1
 	else:
 		d[p.highest_layer] += 1
 	if i % 10000 == 0:
