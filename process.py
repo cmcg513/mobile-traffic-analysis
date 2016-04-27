@@ -8,7 +8,6 @@ args = parser.parse_args()
 
 cap = pyshark.FileCapture(args.pcap)
 
-# s = set()
 d = dict()
 i = 0
 
@@ -20,9 +19,6 @@ for p in cap:
 		d[p.highest_layer] += 1
 	if i % 10000 == 0:
 		print i
-	# s.add(p.highest_layer)
-	# if p.highest_layer in ['BOOTP','BROWSER','DATA','DATA-TEXT-LINES','DB-LSP-DISC']:
-	# 	print str(i) + " --- " + p.highest_layer
 
 print "Total packets: " + str(i)
 print "Total counts: "
