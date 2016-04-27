@@ -9,10 +9,12 @@ parser.add_argument("-o", "--output_filename", type=str, help="filename of outpu
 
 args = parser.parse_args()
 
-ignore_list = list(args.ignore_protoc)
-for i in range(len(ignore_list)):
-	ignore_list[i] = ignore_list[i].upper()
-
+if args.ignore_protoc:
+	ignore_list = list(args.ignore_protoc)
+	for i in range(len(ignore_list)):
+		ignore_list[i] = ignore_list[i].upper()
+else:
+	ignore_list = []
 stat_dict = dict()
 all_protocs = set()
 
