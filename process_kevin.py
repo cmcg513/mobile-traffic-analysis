@@ -47,6 +47,11 @@ print "Percentages: "
 for protoc in protocs:
 	print "\t" + protoc + ": " + str(float(d[protoc])/float(i)*100)
 
+keys = []
+for key in sd:
+	keys.append(key)
+keys = sorted(keys)
 print "\n\n(highest, src_addr, src_port, dst_addr, dst_port): count"
-for p in sd:
-	print "(" + str(p[0]) + ", " + str(p[1]) + ", " + str(p[2]) + ", " + str(p[3]) + ", " + str(p[4]) + "): " +str(sd[p])
+for key in keys:
+	print str(key) + ":\t" + str(sd[key])
+
