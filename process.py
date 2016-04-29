@@ -35,8 +35,9 @@ for p in cap:
 	else:
 		d[p.highest_layer] += 1
 	convo(p)
-	if i % 10000 == 0:
+	if i % 100 == 0:
 		print i
+		break
 
 print "Total packets: " + str(i)
 print "Total counts: "
