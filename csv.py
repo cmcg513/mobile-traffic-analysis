@@ -26,7 +26,7 @@ def convo(pkt):
 			ip[(highest, src_addr, dst_addr)] = 1
 		else:
 			sd[(highest, src_addr, src_port, dst_addr, dst_port)] += 1
-			ip[(highest, src_addr, dst_addr)] = 1
+			ip[(highest, src_addr, dst_addr)] += 1
 	except AttributeError as e:
 		#ignore packets that aren't TCP/UDP or IPv4
 		pass
